@@ -53,9 +53,65 @@ $(window).resize(function(){
   }
 })
 
+
+
+
+$(document).ready(function(){
+
+  // teamSwiper
+  var swiper = new Swiper(".teamSwiper", {
+  loop: true,
+  effect: "fade",
+  pagination: {
+    el: ".swiper-pagination",
+    type: "progressbar",
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+
+// historySwiper
+var swiper = new Swiper(".historySwiper", {
+  slidesPerView: "auto",
+  spaceBetween: 30,
+  loop: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    type: "progressbar",
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  breakpoints: {
+    640: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 40,
+    },
+    1024: {
+      slidesPerView: 5,
+      spaceBetween: 50,
+    },
+  },
+});
+})
+
+
 // business mobile only slider
-var swiper= Swiper;
-var init = false;
+$(document).ready(function(){
+
+  var swiper= Swiper;
+  var init = false;
 function swiperMode() {
     let mobile = window.matchMedia('(min-width: 0px) and (max-width: 768px)');
     let tablet = window.matchMedia('(min-width: 769px) and (max-width: 1024px)');
@@ -77,7 +133,7 @@ function swiperMode() {
                 loop: true,
                 spaceBetween: 10,
                 direction: 'horizontal',
-
+                
                 pagination: {
                   el: ".swiper-pagination",
                   type: "progressbar",
@@ -86,21 +142,21 @@ function swiperMode() {
                   nextEl: ".swiper-button-next",
                   prevEl: ".swiper-button-prev",
                 },
-
+                
                 breakpoints: {
-
-                    767: {
-                      slidesPerView: 2,
+                  
+                  767: {
+                    slidesPerView: 2,
                       spaceBetween: 20,
                     }
 
                 }
 
-            });
-        }
+              });
+            }
 
     }
-
+    
     // Disable (for tablet)
     else if(tablet.matches) {
         swiper.destroy();
@@ -109,17 +165,18 @@ function swiperMode() {
 
     // Disable (for desktop)
     else if(desktop.matches) {
-        swiper.destroy();
-        init = false;
+      swiper.destroy();
+      init = false;
     }
-}
-window.addEventListener('load', function() {
+  }
+  window.addEventListener('load', function() {
     swiperMode();
-});
-window.addEventListener('resize', function() {
+  });
+  window.addEventListener('resize', function() {
     swiperMode();
-});
-
+  });
+  
+})
 
 // business mobile only slider
 var swiper= Swiper;
@@ -267,51 +324,6 @@ $(document).ready(footer_behind_ctn);
 $(window).resize(footer_behind_ctn);
 
 
-// teamSwiper
-var swiper = new Swiper(".teamSwiper", {
-  loop: true,
-  effect: "fade",
-  pagination: {
-    el: ".swiper-pagination",
-    type: "progressbar",
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
 
-// historySwiper
-var swiper = new Swiper(".historySwiper", {
-  slidesPerView: "auto",
-  spaceBetween: 30,
-  loop: true,
-  autoplay: {
-    delay: 2500,
-    disableOnInteraction: false,
-  },
-  pagination: {
-      el: ".swiper-pagination",
-      type: "progressbar",
-  },
-  navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-  },
-  breakpoints: {
-    640: {
-      slidesPerView: 2,
-      spaceBetween: 20,
-    },
-    768: {
-      slidesPerView: 3,
-      spaceBetween: 40,
-    },
-    1024: {
-      slidesPerView: 5,
-      spaceBetween: 50,
-    },
-  },
-  });
 
 
