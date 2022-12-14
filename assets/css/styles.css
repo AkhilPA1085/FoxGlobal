@@ -47,10 +47,10 @@ body{
   .swiper-slide {
     /* text-align: center; */
     font-size: 18px;
-    background: #fff;
+    /* background: #fff; */
 
     /* Center slide text vertically */
-    display: -webkit-box;
+    /* display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
@@ -61,7 +61,7 @@ body{
     -webkit-box-align: center;
     -ms-flex-align: center;
     -webkit-align-items: center;
-    align-items: center;
+    align-items: center; */
   }
 
   .swiper-slide img {
@@ -69,6 +69,18 @@ body{
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  .grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    column-gap: 20px;
+  }
+
+  @media(max-width:992px){
+    .grid-container{
+        display: flex;
+    }
   }
 
 
@@ -92,7 +104,7 @@ body{
 
 .bg-transparent-btn .circle{
     position: relative;
-    /* left: 22%; */
+    left: 10px;
     height: 20px;
     width: 20px;
     border-radius: 50px;
@@ -109,8 +121,8 @@ body{
     position: absolute;
     height: 8px;
     width: 8px;
-    border-top: 1px solid #fff;
-    border-right: 1px solid #fff;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
     transform: rotate(45deg);
     top: 6px;
     left: 5px;
@@ -119,8 +131,8 @@ body{
 }
 
 .bg-white .arrow{
-    border-top: 1px solid var(--main-light-blue);
-    border-right: 1px solid var(--main-light-blue);
+    border-top: 2px solid var(--main-light-blue);
+    border-right: 2px solid var(--main-light-blue);
 }
 
 .bg-transparent-btn:hover .arrow{
@@ -129,9 +141,10 @@ body{
 
 .bg-transparent-btn .arrow:before{
     position: absolute;
+    bottom: -7px;
     content: '';
-    width: 1px;
-    height: 13px;
+    width: 2px;
+    height: 16px;
     background-color: #fff;
     transform: rotate(45deg);
     opacity: 0;
@@ -433,6 +446,10 @@ header .business-dropdown{
     color: #fff;
 }
 
+#banner img{
+    object-fit: cover;
+}
+
 #banner .banner-text{
   text-align: center;
   text-transform: capitalize;
@@ -446,6 +463,12 @@ header .business-dropdown{
     font-size: 65px;
 }
 
+@media(max-width:992px){
+    #banner .banner-text h1{
+        font-size: 36px;
+    }
+}
+
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
@@ -456,16 +479,10 @@ header .business-dropdown{
 }
 
 @media(min-width:992px) and (max-width:1360px){
-    #about .about-image{
-        position: relative;
-    }
+    
 }
 
 @media(max-width:992px){
-    #about .about-image{
-        position: relative;
-    }
-
     #about{
         flex-direction: column;
     }
@@ -491,6 +508,17 @@ header .business-dropdown{
     color: var(--main-gray-color);
     font-weight: 700;
     text-align: left;
+}
+
+@media(max-width:992px){
+    .counts span{
+        font-size: 36px;
+    }
+
+    .counts .count-desc{
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
 }
 
 /*--------------------------------------------------------------
@@ -535,6 +563,49 @@ header .business-dropdown{
    margin-bottom: 20px;
 }
 
+.businessSlider .swiper-button{
+    display: none !important;
+}
+
+@media(max-width:992px){
+    #business{
+        margin-bottom: -300px;
+    }
+
+    .businessSlider .swiper-wrapper{
+        padding-bottom: 50px;
+    }
+
+    .businessSlider .swiper-button{
+        position: inherit;
+        bottom: 25px;
+    }
+
+    .businessSlider .swiper-button{
+        display: flex !important;
+    }
+
+    .businessSlider .swiper-button-prev, .swiper-rtl .swiper-button-next {
+        left: auto;
+        right: 40px;
+    }
+
+    .businessSlider .swiper-pagination{
+        top: auto;
+        bottom: 25px;
+        width: 75%;
+        background-color: var(--main-light-blue);
+        height: 2px;
+    }
+
+    .businessSlider .swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+        height: 250%;
+        position: absolute;
+        top: auto;
+        bottom: -2px;
+    }
+}
+
 @media(max-width:768px){
     .business .card{
         min-height:250px;
@@ -558,7 +629,18 @@ header .business-dropdown{
 #careers{
     padding-top: 100px;
     padding-bottom: 100px;
-    background-color: var(--main-dark-color);
+    background: var(--main-dark-color);
+}
+
+@media(max-width:992px){
+    #careers{
+        background: linear-gradient(to bottom, var(--main-dark-color) 70%, var(--bg-light-gray) 50%);
+    }
+
+    .careers-first-col{
+        order: 2;
+        margin-top: 1.6rem;
+    }
 }
 
 /*--------------------------------------------------------------
@@ -598,9 +680,49 @@ header .business-dropdown{
     object-fit: cover;
 }
 
+.updatesSlider .swiper-button{
+    display: none !important;
+}
+
 @media(max-width:990px){
+    #updates{
+        padding-top: 0;
+    }
     .updates .card-col{
         margin-bottom: 20px;
+    }
+
+    .updatesSlider .swiper-wrapper{
+        padding-bottom: 50px;
+    }
+
+    .updatesSlider .swiper-button{
+        position: inherit;
+        bottom: 25px;
+    }
+
+    .updatesSlider .swiper-button{
+        display: flex !important;
+    }
+
+    .updatesSlider .swiper-button-prev,.updatesSlider .swiper-rtl .swiper-button-next {
+        left: auto;
+        right: 40px;
+    }
+
+    .updatesSlider .swiper-pagination{
+        top: auto;
+        bottom: 25px;
+        width: 75%;
+        background-color: var(--main-light-blue);
+        height: 2px;
+    }
+
+    .updatesSlider .swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+        height: 250%;
+        position: absolute;
+        top: auto;
+        bottom: -2px;
     }
 }
 
@@ -853,48 +975,80 @@ main{
     bottom: -90px;
     left: 50%;
 }
-.historySwiper .swiper-button-next, .swiper-button-prev {
+.historySwiper .swiper-button-next,.historySwiper .swiper-button-prev {
     top: 79%;
     right: 50%;
 }
 
-.historySwiper .swiper-button-prev, .swiper-rtl .swiper-button-next{
+.historySwiper .swiper-button-prev,.historySwiper .swiper-rtl .swiper-button-next{
     left: 44%;
 }
 
-.historySwiper .swiper-button-next, .swiper-button-prev{
+.historySwiper .swiper-button-next,.historySwiper .swiper-button-prev{
     color: #fff ;
 }
 
-.historySwiper .swiper-button-next:after, .swiper-button-prev:after{
+.historySwiper .swiper-button-next:after,.historySwiper .swiper-button-prev:after{
     font-size: inherit;
 }
 
 @media(max-width:992px){
-    #mission-vision .card{
+    #about-us-page .section-main-title{
+        font-size: 48px;
+    }
+
+    #about-us-page .section-description{
+        font-size: 16px;
         margin-top: 20px;
     }
 
-    #our-history{
-        background: var(--main-dark-color) !important;
+    #mission-vision .mission-card{
+        margin-bottom: 20px;
     }
 
-    .historySwiper .swiper-button{
-        display: none !important;
+    #mission-vision .card .section-main-title{
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    #mission-vision .card .section-description{
+        font-size: 16px;
+    }
+
+    #our-history{
+        padding-top: 0;
+        background: linear-gradient(to bottom, var(--bg-light-gray) 18%, var(--main-dark-color) 18%);
+    }
+
+    #our-history .swiper{
+        padding-top: 50px;
+    }
+
+    #our-history .swiper-slide{
+        margin: 0;
+    }
+
+    #our-history .section-main-title {
+        font-size: 48px;
+    }
+
+    .history-titles-col{
+        order: 2;
+    }
+
+    .history-image-col{
+        order: 1;
+    }
+
+    .historySwiper .swiper-button-prev, .historySwiper .swiper-rtl .swiper-button-next{
+        left: 30%;
     }
 
     .historySwiper .swiper-pagination{
-        right: 0;
+        right: auto;
+        width: 75%;
     }
 }
-
-
-
-
-
-
-
-
 
 
 /*--------------------------------------------------------------
@@ -955,7 +1109,7 @@ main{
     justify-content: center;
     align-items: center;
     left: 10%;
-    max-width: 25%;
+    max-width: 30%;
     background-color: #fff;
 }
 
@@ -970,7 +1124,7 @@ main{
     bottom: 90px;
 }
 
-.teamSwiper .swiper-button-next, .swiper-button-prev {
+.teamSwiper .swiper-button-next,.teamSwiper .swiper-button-prev {
     top: 79%;
     right: 50%;
 }
@@ -979,43 +1133,113 @@ main{
     left: 44%;
 }
 
-.teamSwiper .swiper-button-next, .swiper-button-prev{
+.teamSwiper .swiper-button-next,.teamSwiper .swiper-button-prev{
     color: #fff ;
 }
 
-.teamSwiper .swiper-button-next:after, .swiper-button-prev:after{
+.teamSwiper .swiper-button-next:after,.teamSwiper .swiper-button-prev:after{
     font-size: inherit;
 }
 
+.teamMembersSlider .swiper-button{
+    display: none !important;
+}
+
 @media(max-width:992px){
+    .updates.team-page{
+        padding-top: 300px !important;
+    }
+    .teamMembersSlider .swiper-wrapper{
+        padding-bottom: 50px;
+    }
+
+    .teamMembersSlider .swiper-button{
+        position: inherit;
+        bottom: 25px;
+    }
+
+    .teamMembersSlider .swiper-button{
+        display: flex !important;
+    }
+
+    .teamMembersSlider .swiper-button-prev, .swiper-rtl .swiper-button-next {
+        left: auto;
+        right: 40px;
+    }
+
+    .teamMembersSlider .swiper-pagination{
+        top: auto;
+        bottom: 25px;
+        width: 75%;
+        background-color: var(--main-light-blue);
+        height: 2px;
+    }
+
+    .teamMembersSlider .swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+        height: 250%;
+        position: absolute;
+        top: auto;
+        bottom: -2px;
+    }
+    .banner-text.inner-page .section-main-title{
+        font-size: 36px;
+    }
+
+    .team-img{
+        top: 300px;
+    }
+
     .about-team{
         background: var(--main-dark-color);
     }
 
     .about-team-description{
-        order: 2;
+
     }
 
     .team-member-img{
-        order: 1;
-        margin-bottom: 20px;
+        margin-top: 20px;
     }
 
-    .teamSwiper .swiper-button{
-        display: none !important;
+    .teamSwiper{
+        padding-top: 0px;
+        padding-bottom: 0px;
+        background: var(--main-dark-color);
     }
 
     .teamSwiper .swiper-pagination {
         position: absolute;
-        top: auto;
-        bottom: 150px;
+        top: 50px;
+        bottom: auto;
         display: flex;
         justify-content: center;
         align-items: center;
-        left: 45%;
-        right: 50%;
-        max-width: 10%;
+        left: 10%;
+        right: auto;
+        max-width: 60%;
         background-color: #fff;
+    }
+
+    .teamSwiper .swiper-button {
+        position: absolute;
+        bottom: auto;
+        top: 50px;
+        left: auto;
+        right: 10%;
+    }
+
+    .teamSwiper .swiper-button-next, .teamSwiper .swiper-button-prev{
+        right: auto;
+    }
+
+    .teamSwiper .swiper-button-prev, .swiper-rtl .swiper-button-next{
+        left: -50px;
+    }
+}
+
+@media(max-width:480px){
+    .updates.team-page{
+        padding-top: 200px !important;
     }
 }
 
@@ -1060,7 +1284,19 @@ main{
     font-size: 18px;
 } 
 
-@media(max-width:992px){
+@media(min-width:768px) and (max-width:992px){
+    .business-banner-content {
+        background-color: rgb(255,255,255,0.75);
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        max-width: 100%;
+        text-align: start;
+        padding-top: 50px;
+    }
+}
+
+@media(max-width:768px){
     .business-content .counts{
         order: 2;
     }
@@ -1070,9 +1306,13 @@ main{
         margin-bottom: 20px;
     }
 
+    .business-content .section-description{
+        padding: 100px 0px;
+    }
+
     .business-banner-content {
         background-color: rgb(255,255,255,0.75);
-        position: absolute;
+        position: relative;
         right: 0;
         bottom: 0;
         max-width: 100%;
@@ -1087,11 +1327,19 @@ main{
 --------------------------------------------------------------*/
 
 .manufacturing-products{
-    background-color: var(--bg-light-gray) !important;
+    background: var(--bg-light-gray) !important; 
 }
 
 .manufacturing-products .card{
     border-radius: 0;
+}
+
+.manufacturing-products .card:nth-child(odd) .row{
+    flex-direction: row-reverse;
+}
+
+.manufacturing-products .card:nth-child(odd) .card-block{
+    padding-left: 40px;
 }
 
 .manufacturing-products .card .card-text{
@@ -1103,6 +1351,12 @@ main{
 .manufacturing-products .card .card-block{
     padding-top: 60px;
     padding-left: 20px;
+}
+
+@media(max-width:992px){
+    .manufacturing-products{
+        background: linear-gradient(to bottom, #ffff 5%, var(--bg-light-gray) 22%) !important;
+    }
 }
 
 

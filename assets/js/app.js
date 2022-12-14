@@ -44,15 +44,227 @@ $(window).resize(function(){
 });
 
 
+// about image
+$(window).resize(function(){
+  if($(window).width() <992){
+    $('.about-image-wrapper').addClass('container');
+
+    $('.container .story-content').removeClass('container');
+  }
+})
+
+// business mobile only slider
+var swiper= Swiper;
+var init = false;
+function swiperMode() {
+    let mobile = window.matchMedia('(min-width: 0px) and (max-width: 768px)');
+    let tablet = window.matchMedia('(min-width: 769px) and (max-width: 1024px)');
+    let desktop = window.matchMedia('(min-width: 1025px)');
+
+    // Enable (for mobile)
+    if(mobile.matches) {
+        if (!init) {
+            init = true;
+            swiper = new Swiper('.businessSlider', {
+                slidesPerView: 1,
+                spaceBetween: 10,
+                effect:'fade',
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                centeredSlides: true,
+                loop: true,
+                spaceBetween: 10,
+                direction: 'horizontal',
+
+                pagination: {
+                  el: ".swiper-pagination",
+                  type: "progressbar",
+                },
+                navigation: {
+                  nextEl: ".swiper-button-next",
+                  prevEl: ".swiper-button-prev",
+                },
+
+                breakpoints: {
+
+                    767: {
+                      slidesPerView: 2,
+                      spaceBetween: 20,
+                    }
+
+                }
+
+            });
+        }
+
+    }
+
+    // Disable (for tablet)
+    else if(tablet.matches) {
+        swiper.destroy();
+        init = false;
+    }
+
+    // Disable (for desktop)
+    else if(desktop.matches) {
+        swiper.destroy();
+        init = false;
+    }
+}
+window.addEventListener('load', function() {
+    swiperMode();
+});
+window.addEventListener('resize', function() {
+    swiperMode();
+});
+
+
+// business mobile only slider
+var swiper= Swiper;
+var init = false;
+function swiperMode() {
+    let mobile = window.matchMedia('(min-width: 0px) and (max-width: 768px)');
+    let tablet = window.matchMedia('(min-width: 769px) and (max-width: 1024px)');
+    let desktop = window.matchMedia('(min-width: 1025px)');
+
+    // Enable (for mobile)
+    if(mobile.matches) {
+        if (!init) {
+            init = true;
+            swiper = new Swiper('.updatesSlider', {
+                slidesPerView: 1,
+                spaceBetween: 10,
+                effect:'fade',
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                centeredSlides: true,
+                loop: true,
+                spaceBetween: 10,
+                direction: 'horizontal',
+
+                pagination: {
+                  el: ".swiper-pagination",
+                  type: "progressbar",
+                },
+                navigation: {
+                  nextEl: ".swiper-button-next",
+                  prevEl: ".swiper-button-prev",
+                },
+
+                breakpoints: {
+
+                    767: {
+                      slidesPerView: 2,
+                      spaceBetween: 20,
+                    }
+
+                }
+
+            });
+        }
+
+    }
+
+    // Disable (for tablet)
+    else if(tablet.matches) {
+        swiper.destroy();
+        init = false;
+    }
+
+    // Disable (for desktop)
+    else if(desktop.matches) {
+        swiper.destroy();
+        init = false;
+    }
+}
+window.addEventListener('load', function() {
+    swiperMode();
+});
+window.addEventListener('resize', function() {
+    swiperMode();
+});
+
+
+// business mobile only slider
+var swiper= Swiper;
+var init = false;
+function swiperMode() {
+    let mobile = window.matchMedia('(min-width: 0px) and (max-width: 768px)');
+    let tablet = window.matchMedia('(min-width: 769px) and (max-width: 1024px)');
+    let desktop = window.matchMedia('(min-width: 1025px)');
+
+    // Enable (for mobile)
+    if(mobile.matches) {
+        if (!init) {
+            init = true;
+            swiper = new Swiper('.teamMembersSlider', {
+                slidesPerView: 1,
+                spaceBetween: 10,
+                effect:'fade',
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                centeredSlides: true,
+                loop: true,
+                spaceBetween: 10,
+                direction: 'horizontal',
+
+                pagination: {
+                  el: ".swiper-pagination",
+                  type: "progressbar",
+                },
+                navigation: {
+                  nextEl: ".swiper-button-next",
+                  prevEl: ".swiper-button-prev",
+                },
+
+                breakpoints: {
+
+                    767: {
+                      slidesPerView: 2,
+                      spaceBetween: 20,
+                    }
+
+                }
+
+            });
+        }
+
+    }
+
+    // Disable (for tablet)
+    else if(tablet.matches) {
+        swiper.destroy();
+        init = false;
+    }
+
+    // Disable (for desktop)
+    else if(desktop.matches) {
+        swiper.destroy();
+        init = false;
+    }
+}
+window.addEventListener('load', function() {
+    swiperMode();
+});
+window.addEventListener('resize', function() {
+    swiperMode();
+});
+
+
+
 // fixed footer
 function footer_behind_ctn(){
   var footerHeight = $('.footer').outerHeight();
   $('.footer-top').css('margin-bottom', footerHeight);
 }
-
 $(document).ready(footer_behind_ctn);
 $(window).resize(footer_behind_ctn);
-
 
 
 // teamSwiper
